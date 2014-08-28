@@ -1,0 +1,15 @@
+[production]
+
+mail.fromAddress = "noreply@example.org"
+mail.from = "Sender"
+mail.password.subject = "Your new password for example.org"
+mail.password.body = "Hi #name#,
+
+you may login to your account using the password
+
+#password#
+
+Do not hesitate to contact us in case of any questions!
+
+Sincerly,
+example.org"

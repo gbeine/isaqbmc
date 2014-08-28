@@ -1,0 +1,13 @@
+[production]
+
+ldap.log_path = /tmp/ldap.log
+ldap.user_id_attribute = uid
+ldap.user_base = "ou=people,dc=example,dc=org"
+ldap.group_member_attribute = memberUid
+ldap.group_base = "ou=group,dc=example,dc=org"
+
+ldap.server.host = 127.0.0.1
+ldap.server.baseDn = "dc=example,dc=org"
+ldap.server.bindRequiresDn = false
+ldap.server.username = "cn=admin,dc=example,dc=org"
+ldap.server.password = "secret"

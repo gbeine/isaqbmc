@@ -1,0 +1,9 @@
+._*
+.~lock.*
+.buildpath
+.DS_Store
+.project
+.settings
+composer.lock
+vendor/bin
+*.rexpfd

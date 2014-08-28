@@ -1,0 +1,63 @@
+<div style="float:left; padding-right:16px;"></div>
+<h3><?php echo $this->translate('Hello'); ?>, <?php echo $this->memberData()->getName(); ?>!</h3>
+
+<?php
+$form = $this->memberDataForm;
+$form->prepare();
+$form->setAttribute('action', $this->url('member/update'));
+$form->setAttribute('method', 'post');
+?>
+
+<?php echo $this->form()->openTag($form) ?>
+
+    <dl class="zend_form">
+        <?php #echo $this->formElementErrors($form->get('identity')) ?>
+
+        <dt><?php echo $this->formLabel($form->get('uid')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('uid')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('uidNumber')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('uidNumber')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('homeDirectory')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('homeDirectory')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('loginShell')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('loginShell')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('mailAcceptAddress')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('mailAcceptAddress')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('mailForwardAddress')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('mailForwardAddress')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('mail')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('mail')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('telephoneNumber')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('telephoneNumber')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('postalAddress')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('postalAddress')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('organization')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('organization')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('cn')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('cn')) ?></dd>
+
+        <dt><?php echo $this->formLabel($form->get('sn')) ?></dt>
+        <dd><?php echo $this->formInput($form->get('sn')) ?></dd>
+
+        <?php if ($this->redirect): ?>
+            <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
+        <?php endif ?>
+
+        <dd><?php echo $this->formButton($form->get('submit')) ?></dd>
+    </dl>
+
+<?php echo $this->form()->closeTag() ?>
+
+<a href="<?php echo $this->url('member/password') ?>">[<?php echo $this->translate('Change password') ?>]</a> |
+<a href="<?php echo $this->url('member/logout'); ?>">[<?php echo $this->translate('Sign Out'); ?>]</a>
+<div style="clear:both;"></div>
